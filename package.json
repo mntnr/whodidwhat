@@ -1,0 +1,53 @@
+{
+  "name": "whodunnit",
+  "version": "0.0.0-development",
+  "description": "Figure out who did what in a github project.",
+  "license": "MIT",
+  "repository": "tgetgood/whodunnit",
+  "author": {
+    "name": "Thomas Getgood",
+    "email": "thomas.getgood@gmail.com"
+  },
+  "bin": "src/cli.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "ava --no-color test/*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "keywords": [
+    "cli-app",
+    "cli",
+    "name",
+    "contribs",
+    "contrib",
+    "contributor",
+    "contributors",
+    "github",
+    "OSS",
+    "open source",
+    "commenters",
+    "creators",
+    "reviewers",
+    "review",
+    "code review",
+    "community",
+    "contribute",
+    "contributing"
+  ],
+  "dependencies": {
+    "name-your-contributors": ">=3.3.0",
+    "meow": "^3.7.0"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "semantic-release": "^8.2.0",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "nodejs": ">=6.11.3"
+  },
+  "coordinates": [
+    45.5231596,
+    -73.5870259
+  ]
+}
