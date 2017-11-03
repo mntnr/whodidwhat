@@ -55,4 +55,12 @@ const byUser = (args) => {
   return jsonOut
 }
 
-readStdin().then(JSON.parse).then(byUser).then(console.log)
+readStdin()
+  .then(JSON.parse)
+  .then(byUser)
+  .then(x => JSON.stringify(x, null, 2))
+  .then(console.log)
+
+module.exports = {
+  byUser
+}
