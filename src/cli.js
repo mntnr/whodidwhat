@@ -1,66 +1,36 @@
 #!/usr/bin/env node
+
 'use strict'
 
-const readStdin = () => new Promise((resolve, reject) => {
-  let data = ''
+const {readStdin, byUser} = require('./index')
+const args = require('minimist')(process.argv.slice(2))
 
-  process.stdin.resume()
-  process.stdin.setEncoding('utf8')
+const helpMsg = `
+  Post Processing for name-your-contributors output.
 
-  process.stdin.on('data', function (chunk) {
-    data += chunk
-  })
+  Usage
+    $ cat out.json | whodunnit [opts]
+  Options
+    -u, --user  - Filter for a specific user
+    -h, --help  - Display this message
 
-  process.stdin.on('end', function () {
-    resolve(data)
-  })
+`
 
-  process.stdin.on('error', reject)
-})
-
-const cat = l => l.map(l => [l.login, l.count])
-
-const loopField = (out, l, key) => {
-  for (let [login, count] of cat(l)) {
-    if (out.has(login)) {
-      out.get(login).commits = count
-    } else {
-      let t = {}
-      t[key] = count
-      out.set(login, t)
-    }
-  }
-}
-
-const typeMap = [['commitAuthors', 'commits'],
-                 ['commitCommentators', 'commitComments'],
-                 ['prCreators', 'prsCreated'],
-                 ['prCommentators', 'prComments'],
-                 ['issueCreators', 'issuesCreated'],
-                 ['issueCommentators', 'issueComments'],
-                 ['reactors', 'reactions'],
-                 ['reviewers', 'codeReviews']]
-
-const byUser = (args) => {
-  const out = new Map()
-
-  typeMap.map(([k, n]) => loopField(out, args[k], n))
-
-  const jsonOut = {}
-
-  for (let [k, v] of out.entries()) {
-    jsonOut[k] = v
-  }
-
-  return jsonOut
-}
-
-readStdin()
-  .then(JSON.parse)
-  .then(byUser)
-  .then(x => JSON.stringify(x, null, 2))
-  .then(console.log)
-
-module.exports = {
-  byUser
+if (args.h || args.help) {
+  console.log(helpMsg)
+  process.exit(0)
+} else {
+  readStdin()
+    .then(JSON.parse)
+    .then(byUser)
+    .then(json => {
+      const user = args.u || args.user
+      if (user && user !== true) {
+        return json[user]
+      } else {
+        return json
+      }
+    }).then(x => JSON.stringify(x, null, 2))
+    .then(console.log)
+    .catch(console.error)
 }

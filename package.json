@@ -35,8 +35,7 @@
     "contributing"
   ],
   "dependencies": {
-    "name-your-contributors": ">=3.3.0",
-    "meow": "^3.7.0"
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "ava": "^0.22.0",
