@@ -1,9 +1,9 @@
 {
-  "name": "whodunnit",
-  "version": "0.0.0-development",
-  "description": "Figure out who did what in a github project.",
+  "name": "whodidwhat",
+  "version": "1.0.0",
+  "description": "Post processing for name-your-contributors.",
   "license": "MIT",
-  "repository": "tgetgood/whodunnit",
+  "repository": "mntnr/whodunnit",
   "author": {
     "name": "Thomas Getgood",
     "email": "thomas.getgood@gmail.com"
@@ -44,9 +44,5 @@
   },
   "engines": {
     "nodejs": ">=6.11.3"
-  },
-  "coordinates": [
-    45.5231596,
-    -73.5870259
-  ]
+  }
 }
