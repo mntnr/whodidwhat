@@ -11,7 +11,7 @@ $ npm install -g whodidwhat
 Or you can clone it locally:
 
 ```sh
-$ git clone https://github.com/tgetgood/whodunnit
+$ git clone https://github.com/mntnr/whodidwhat
 ```
 
 ## Use

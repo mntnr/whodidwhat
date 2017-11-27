@@ -9,7 +9,7 @@ const helpMsg = `
   Post Processing for name-your-contributors output.
 
   Usage
-    $ cat out.json | whodunnit [opts]
+    $ cat out.json | whodidwhat [opts]
   Options
     -u, --user  - Filter for a specific user
     -h, --help  - Display this message

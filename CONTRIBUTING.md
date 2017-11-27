@@ -2,7 +2,7 @@
 
 Please contribute! Here are some things that would be great:
 
-- [Open an issue!](https://github.com/tgetgood/whodunnit/issues/new)
+- [Open an issue!](https://github.com/mntnr/whodidwhat/issues/new)
 - Open a pull request!
 - Say hi! 👋
 

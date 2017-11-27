@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Post processing for name-your-contributors.",
   "license": "MIT",
-  "repository": "mntnr/whodunnit",
+  "repository": "mntnr/whodidwhat",
   "author": {
     "name": "Thomas Getgood",
     "email": "thomas.getgood@gmail.com"
