@@ -43,7 +43,15 @@ const typeMap = [['commitAuthors', 'commits'],
 const byUser = (args) => {
   const out = new Map()
 
-  typeMap.map(([k, n]) => loopField(out, args[k], n))
+  typeMap.map(([k, n]) => {
+    if (args[k]) {
+      return loopField(out, args[k], n)
+    } else {
+      const o = {}
+      o[k] = []
+      return o
+    }
+  })
 
   const jsonOut = {}
 
