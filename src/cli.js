@@ -2,7 +2,7 @@
 
 'use strict'
 
-const {readStdin, byUser} = require('./index')
+const {readStdin, byUser, contribMd, selectUser} = require('./index')
 const args = require('minimist')(process.argv.slice(2))
 
 const helpMsg = `
@@ -12,9 +12,12 @@ const helpMsg = `
     $ cat out.json | whodidwhat [opts]
   Options
     -u, --user  - Filter for a specific user
+    -m, --md    - Output contributor list as markdown
     -h, --help  - Display this message
 
 `
+
+const str = json => JSON.stringify(json, null, 2)
 
 if (args.h || args.help) {
   console.log(helpMsg)
@@ -25,12 +28,15 @@ if (args.h || args.help) {
     .then(byUser)
     .then(json => {
       const user = args.u || args.user
-      if (user && user !== true) {
-        return json[user]
+
+      if (args.m || args.md) {
+        return contribMd(json)
+      } else if (user && user != true) {
+        return str(selectUser(user, json))
       } else {
-        return json
+        return str(json)
       }
-    }).then(x => JSON.stringify(x, null, 2))
+    })
     .then(console.log)
     .catch(console.error)
 }
