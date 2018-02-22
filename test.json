@@ -1,0 +1,144 @@
+{
+  "prCreators": [
+    {
+      "login": "greenkeeperio-bot",
+      "name": "Greenkeeper",
+      "url": "https://github.com/greenkeeperio-bot",
+      "count": 165
+    },
+    {
+      "login": "haadcode",
+      "name": "Haad",
+      "url": "https://github.com/haadcode",
+      "count": 31
+    },
+    {
+      "login": "RichardLitt",
+      "name": "Richard Littauer",
+      "url": "https://github.com/RichardLitt",
+      "count": 5
+    }
+  ],
+  "prCommentators": [
+    {
+      "login": "haadcode",
+      "name": "Haad",
+      "url": "https://github.com/haadcode",
+      "count": 46
+    },
+    {
+      "login": "shamb0t",
+      "name": null,
+      "url": "https://github.com/shamb0t",
+      "count": 4
+    }
+  ],
+  "issueCreators": [
+    {
+      "login": "haadcode",
+      "name": "Haad",
+      "url": "https://github.com/haadcode",
+      "count": 22
+    },
+    {
+      "login": "cristiano-belloni",
+      "name": "Cristiano Belloni",
+      "url": "https://github.com/cristiano-belloni",
+      "count": 6
+    },
+    {
+      "login": "MartianH",
+      "name": "",
+      "url": "https://github.com/MartianH",
+      "count": 1
+    },
+    {
+      "login": "lgleim",
+      "name": "Lars Gleim",
+      "url": "https://github.com/lgleim",
+      "count": 1
+    },
+    {
+      "login": "theD1360",
+      "name": "Diego Alejos",
+      "url": "https://github.com/theD1360",
+      "count": 1
+    },
+    {
+      "login": "edsilv",
+      "name": "Edward Silverton",
+      "url": "https://github.com/edsilv",
+      "count": 1
+    },
+    {
+      "login": "glensimister",
+      "name": null,
+      "url": "https://github.com/glensimister",
+      "count": 1
+    },
+    {
+      "login": "5310",
+      "name": "Sayantan Chaudhuri",
+      "url": "https://github.com/5310",
+      "count": 1
+    },
+    {
+      "login": "baimurzin",
+      "name": "Vladislav",
+      "url": "https://github.com/baimurzin",
+      "count": 1
+    },
+    {
+      "login": "pranaygp",
+      "name": "Pranay Prakash",
+      "url": "https://github.com/pranaygp",
+      "count": 1
+    }
+  ],
+  "issueCommentators": [
+    {
+      "login": "haadcode",
+      "name": "Haad",
+      "url": "https://github.com/haadcode",
+      "count": 199
+    },
+    {
+      "login": "cristiano-belloni",
+      "name": "Cristiano Belloni",
+      "url": "https://github.com/cristiano-belloni",
+      "count": 24
+    },
+    {
+      "login": "shd101wyy",
+      "name": "Yiyi Wang",
+      "url": "https://github.com/shd101wyy",
+      "count": 14
+    },
+    {
+      "login": "ricardojmendez",
+      "name": "Ricardo J. Méndez",
+      "url": "https://github.com/ricardojmendez",
+      "count": 9
+    }
+  ],
+  "reviewers": [
+    {
+      "login": "haadcode",
+      "name": "Haad",
+      "url": "https://github.com/haadcode",
+      "count": 6
+    },
+    {
+      "login": "dignifiedquire",
+      "name": "Friedel Ziegelmayer",
+      "url": "https://github.com/dignifiedquire",
+      "count": 1
+    },
+    {
+      "login": "RichardLitt",
+      "name": "Richard Littauer",
+      "url": "https://github.com/RichardLitt",
+      "count": 1
+    }
+  ]
+}

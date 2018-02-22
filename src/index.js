@@ -17,18 +17,25 @@ const readStdin = () => new Promise((resolve, reject) => {
   process.stdin.on('error', reject)
 })
 
-const cat = l => l.map(l => [l.login, l.count, l.url])
+const cat = l => l.map(l => [l.login, l.count, l.url, l.name])
 
+// This should use the login as the userkey, alone
 const loopField = (out, l, key) => {
-  for (let [login, count, url] of cat(l)) {
-    const userkey = `- [@${login}](${url})`
-    if (out.has(userkey)) {
-      out.get(userkey).commits = count
-    } else {
-      let t = {}
-      t[key] = count
-      out.set(userkey, t)
-    }
+  for (let [login, count, url, name] of cat(l)) {
+    const userkey = login
+    // const userkey = `- [@${login}](${url})`
+    // if (out.has(userkey)) {
+      // Why is this getting only getting commits? It should get all contributions.
+      // This is overriding some of the other keys.
+      // out.get(userkey).commits = count
+    // } else {
+    let t = {'counts': count || 0}
+    t['counts'] += count
+    t['url'] = url
+    t['login'] = login
+    t['name'] = name
+    out.set(userkey, t)
+    // }
   }
 }
 
@@ -44,15 +51,20 @@ const typeMap = [['commitAuthors', 'commits'],
 const mapTypes = args => {
   const out = new Map()
 
+  // What do k and n mean?
   typeMap.map(([k, n]) => {
     if (args[k]) {
       return loopField(out, args[k], n)
     } else {
       const o = {}
+      // Why would you reset to nothing?
       o[k] = []
       return o
     }
   })
+
+  console.log(out)
+
   return out
 }
 
@@ -67,6 +79,7 @@ const byUser = args => {
   return jsonOut
 }
 
+// Add together all of the counts that return
 const rank = v => {
   let c = 0
   for (const k in v) {
@@ -75,6 +88,17 @@ const rank = v => {
   return c
 }
 
+const gitAuthors = json => {
+  // console.log(json)
+  let contribs = []
+  for (const k in json) {
+    contribs.push([k, json[k]['counts']])
+  }
+  contribs = contribs.sort((a, b) => b[1] - a[1]).map(x => x[0])
+  // console.log(contribs)
+}
+
+// This should sort down to the - [@user](www.user) format
 const contribMd = json => {
   let contribs = []
   for (const k in json) {
@@ -98,6 +122,7 @@ const selectUser = (user, json) => {
 
 module.exports = {
   byUser,
+  gitAuthors,
   selectUser,
   contribMd,
   readStdin

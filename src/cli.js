@@ -2,7 +2,7 @@
 
 'use strict'
 
-const {readStdin, byUser, contribMd, selectUser} = require('./index')
+const {readStdin, byUser, gitAuthors, contribMd, selectUser} = require('./index')
 const args = require('minimist')(process.argv.slice(2))
 
 const helpMsg = `
@@ -33,6 +33,8 @@ if (args.h || args.help) {
         return contribMd(json)
       } else if (user && user != true) {
         return str(selectUser(user, json))
+      } else if (args.git) {
+        return gitAuthors(json)
       } else {
         return str(json)
       }
