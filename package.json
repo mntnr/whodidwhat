@@ -38,9 +38,9 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
-    "semantic-release": "^8.2.0",
-    "standard": "^10.0.3"
+    "ava": "^0.25.0",
+    "semantic-release": "^15.1.4",
+    "standard": "^11.0.1"
   },
   "engines": {
     "nodejs": ">=6.12.0"
