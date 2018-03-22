@@ -1,5 +1,7 @@
 # Who Did What
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mntnr/whodidwhat.svg)](https://greenkeeper.io/)
+
 A tiny script to reformat, filter, and transform the output of [`name-your-contributors`](https://github.com/mntnr/name-your-contributors).
 
 ## Install
